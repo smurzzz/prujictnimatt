@@ -181,18 +181,27 @@ export const bestSelling = [
 
 /* Branding */
 
+import brands3 from "../src/assets/brands-3.avif";
+import brands2 from "../src/assets/brands-2.avif";
+import brands4 from "../src/assets/brands-4.avif";
+import brands6 from "../src/assets/brands-6.avif";
+
 export const Branding = [
   {
     id: 1,
+    images: brands3,
   },
   {
     id: 2,
+    images: brands2,
   },
   {
     id: 3,
+    images: brands4,
   },
   {
     id: 4,
+    images: brands6,
   },
 ];
 
@@ -213,10 +222,13 @@ export const CategoriesLinks = [
 
 /* About US descriptions */
 
+import about1 from "../src/assets/bvlgari.png";
+import about2 from "../src/assets/carolina.png";
+
 export const about = [
   {
     id: 1,
-    images: null,
+    images: about1,
     title: {
       title1: "A Touch of Luxury, a Spray of Confidence.",
       title2: "Elegance in Every Essence — A Scent That Speaks Without Words",
@@ -230,7 +242,7 @@ export const about = [
   },
   {
     id: 1,
-    images: null,
+    images: about2,
     title: {
       title1: "Unveil the Power Within — Let Your Fragrance Speak Volumes",
       title2: "Crafted for Life’s Finest Moments — A Scent for Every Story",
@@ -259,11 +271,33 @@ export const mensCategorie = [
 
   {
     id: 2,
-    image: Sexy,
-    title: "SEXY MAN",
-    price: "$54.83",
+    image: happy,
+    title: "Happy Perfume",
+    price: "$224.83",
     description:
       "This is created by Alberto Morillasand Rosendo Mateu The top notes of the fragrance are a mix of mandarin, bergamot, and green leaf, which give a fresh and citrusy start to the scent. The heart of the fragrance is composed of cardamom, pepper, and flowers, which add a spicy and floral touch to the fragrance.",
+    qoute: "UNLEASH YOUR INNER ALLURE",
+  },
+];
+
+export const womensCategories = [
+  {
+    id: 1,
+    image: lacoste,
+    title: "L'Homme Lacoste",
+    price: "$34.83",
+    description:
+      "L'Homme Lacoste is a men's Eau de Toilette introduced in 2017, crafted by perfumer Michel Girard. This fragrance embodies the modern man's elegance and versatility, offering a blend of fruity freshness and spicy warmth.​",
+    qoute: "UNLEASH YOUR INNER ALLURE",
+  },
+
+  {
+    id: 2,
+    image: victoria,
+    title: "Micheal Cinco Bench ",
+    price: "$24.83",
+    description:
+      "Impalpable is housed in a sleek, emerald-cut grey bottle with a clear cap, reflecting Michael Cinco's couture aesthetic. The fragrance is available in a 90ml Eau de Parfum concentration to the scent. The heart of the fragrance is composed of cardamom, pepper, and flowers, which add a spicy and floral touch to the fragrance.",
     qoute: "UNLEASH YOUR INNER ALLURE",
   },
 ];

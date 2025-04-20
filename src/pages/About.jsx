@@ -19,7 +19,13 @@ const About = () => {
                 index % 2 !== 0 ? "flex-row-reverse" : ""
               }`}
             >
-              <div className="border-2 w-full lg:w-[500px] lg:mb-0 mb-[50px] h-[400px] rounded-4xl  "></div>
+              <div className="bg-white py-5 w-full lg:w-[500px] lg:mb-0 mb-[50px] h-[400px] rounded-4xl  ">
+                <img
+                  src={item.images}
+                  className="w-full h-full rounded-4xl"
+                  alt="images"
+                />
+              </div>
               <div className="w-full max-w-[800px] h-[400px] flex justify-center flex-col">
                 <div className="mb-10">
                   <p className="font-semibold text-xl tracking-wide mb-3">
@@ -41,7 +47,6 @@ const About = () => {
             </div>
           ))}
         </div>
-        <div className="w-full h-[500px] border-2 rounded-4xl"></div>
       </div>
     </section>
   );

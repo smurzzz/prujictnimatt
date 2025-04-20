@@ -5,40 +5,64 @@ const Mens = () => {
   const [hoveredId, setHoveredId] = useState(null);
 
   return (
-    <section className="w-full min-h-screen mt-[150px] lg:px-15 px-10">
-      <div className="container">
+    <section className="w-full min-h-screen mt-[150px] px-5 sm:px-10 lg:px-15">
+      <div className="container mx-auto">
         <p className="font-cookie font-semibold mb-[80px] w-full text-center text-black text-3xl capitalize tracking-wider">
-          Galerie De Parfum
+          Men's Galerie De Parfum
         </p>
 
-        <div className="w-full grid grid-cols-[600px_1fr] gap-x-25 place-items-center">
-          <div className="w-full h-[400px] border-2 rounded-2xl"></div>
-          <p className="text-[29px] leading-[40px] tracking-widest">
-            One of our core branch that can be found in South East Asia in
-            Philippines, Thailand & Indonesia. A lots of different varities of
-            Parfum of your choice.
+        {/* Top section */}
+
+        <div className="w-full flex-center">
+          <p className="text-[20px] sm:text-[24px] w-full lg:max-w-[800px] leading-[30px] sm:leading-[40px] tracking-wide text-center">
+            One of our core branches found in Southeast Asia: Philippines,
+            Thailand & Indonesia. Explore a variety of parfum options for your
+            unique taste.
           </p>
         </div>
 
-        <div className="mt-[50px] grid grid-cols-2 place-items-center gap-x-25">
+        {/* Product grid */}
+        <div className="mt-[50px] grid grid-cols-1 xl:grid-cols-2 gap-x-10 gap-y-10 xl:gap-y-0 place-items-center">
           {mensCategorie.map((item) => (
             <div
               key={item.id}
-              className="w-full rounded-2xl grid grid-cols-2 cursor-pointer h-[400px] transition ease-in border-2"
-              onMouseEnter={() => setHoveredId(item.id)}
-              onMouseLeave={() => setHoveredId(null)}
+              className="w-full rounded-2xl grid grid-cols-1 sm:grid-cols-2 cursor-pointer h-auto sm:h-[400px] transition-all duration-500 ease-in-out overflow-hidden"
             >
-              <div className="bg-yellow-100 h-full ">
-                <img className="h-[280px]" src={item.image} alt="" />
-                <p className="p-5 flex-center text-2xl">{item.title}</p>
-                <p className="flex-center text-[20px]">{item.price}</p>
+              {/* Image & basic info */}
+              <div
+                className="bg-white drop-shadow-2xl py-10 h-full flex-center transition-all flex-col duration-500 ease-in-out"
+                onMouseEnter={() => setHoveredId(item.id)}
+                onMouseLeave={() => setHoveredId(null)}
+              >
+                <img
+                  className="w-[70%] rounded-2xl drop-shadow-[0_10px_15px_rgba(0,0,0,0.35)]"
+                  src={item.image}
+                  alt={item.productName}
+                />
+                <p className="font-bold tracking-wider text-black text-md mt-5">
+                  {item.title}
+                </p>
+                <p className="font-semibold text-lg text-black">{item.price}</p>
               </div>
-              {hoveredId === item.id ? (
-                <div className="bg-green-100 h-full w-full flex-col flex-center gap-10 leading-8 tracking-wide mb-[50px]">
-                  <p className="mt-[20px] text-justify">{item.description}</p>
-                  <p className="">{item.qoute}</p>
-                </div>
-              ) : null}
+
+              {/* Hover section */}
+              <div
+                className={`bg-white h-full w-full transition-all duration-500 ease-in-out px-5 flex-center flex-col gap-5
+                  ${
+                    hoveredId === item.id
+                      ? "translate-x-0 opacity-100"
+                      : "translate-x-full opacity-0 pointer-events-none"
+                  }
+                  sm:translate-x-0 sm:opacity-100 sm:pointer-events-auto
+                `}
+              >
+                <p className="mt-[20px] text-sm font-semibold text-center leading-[25px]">
+                  {item.description}
+                </p>
+                <p className="text-sm text-center sm:text-md font-bold">
+                  {item.qoute}
+                </p>
+              </div>
             </div>
           ))}
         </div>

@@ -19,8 +19,14 @@ const Brands = () => {
               {Branding.map((item) => (
                 <div
                   key={item.id}
-                  className="border-2 drop-shadow-2xl rounded-4xl w-full grid place-self-center h-[500px] transform transition-all scale-110 hover:scale-115"
-                ></div>
+                  className="drop-shadow-2xl flex-center border-2 bg-white rounded-4xl w-full grid place-self-center h-[500px] transform transition-all scale-110 hover:scale-115"
+                >
+                  <img
+                    src={item.images}
+                    alt="images"
+                    className="w-[50%] rounded-4xl "
+                  />
+                </div>
               ))}
             </div>
           </div>
